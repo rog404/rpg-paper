@@ -1,0 +1,41 @@
+.inventory {
+  height: 300px;
+  width: 375px;
+  padding: 2px;
+}
+
+.inventory--equipment {
+  display: grid;
+  gap: 3px;
+  grid-template-columns: auto auto auto;
+  padding: 0 20px;
+}
+
+.inventory--equipmentBox {
+  background: #e0e7e7;
+  width: 110px;
+  height: 110px;
+  border-radius: 4px;
+  transform: scale(0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  color: black;
+
+}
+
+.inventory--equipmentBox span {
+  color: black
+}
+
+.inventory--equipmentBox span:last-child {
+  font-size: 20px;
+  color: #DB4166
+}
+
+.inventory--equipmentBox:hover {
+  background: #ffffff;
+  transform: scale(1);
+}

@@ -1,0 +1,146 @@
+header {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  position: relative;
+  border-radius: 4px;
+  border-bottom: 3px solid #e0e7e7;
+  margin-bottom: 5px;
+}
+
+.header--exp {
+  position: absolute;
+  z-index: 100;
+  left: -8px;
+  top: 7px;
+}
+
+svg {
+  width: 114px;
+  height: 114px;
+}
+
+.header--bg {
+  fill: none;
+  stroke-width: 10px;
+  stroke: #FFF;
+}
+
+[class^="header--meter"] {
+  fill: none;
+  stroke-width: 10px;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.header--meter {
+  stroke-dasharray: 360;
+  stroke-dashoffset: 100;
+  stroke: #ffd311;
+  animation: progress-1 1s ease-out;
+}
+
+.header--goldBar {
+  color: #ffd311;
+  font-size: 20px;
+  width: 300px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header--level {
+  position: absolute;
+  background: #e0e7e7;
+  height: 90px;
+  width: 90px;
+  z-index: 10;
+  border-radius: 90px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #fff
+}
+
+.header--level span {
+  color: #15161E;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.header--userName {
+  font-size: 20px;
+  margin: 0 0 8px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header--icon {
+  fill:#ffd311;
+  margin-right: 4px;
+  width: 28px;
+  height: 28px;
+}
+
+.header--userClass{
+  font-size: 14px;
+  color: #DB4166;
+  margin-left: 8px;
+}
+
+.header--stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0 0 60px;
+  position: relative;
+}
+
+.header--bar {
+  border-radius: 30px;
+  background: #e0e7e7;
+  width: 300px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.header--lastBar{
+  margin-bottom: 2px;
+}
+
+.header--hp {
+  border-radius: 30px;
+  background: #32cd32;
+  height: 28px;
+  width: 80%;
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+}
+
+.header--mp {
+  border-radius: 30px;
+  background: #1e90ff;
+  height: 20px;
+  width: 50%;
+  transition: 0.4s linear;
+  transition-property: width, background-color;
+}
+
+.header--barLabel{
+  position: absolute;
+  color: #000;
+  top: 0;
+  right: 6px;
+}
+
+.header--bigBar {
+  font-size: 20px;
+  top: 2px
+}

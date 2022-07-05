@@ -1,0 +1,62 @@
+.attribute {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 10px;
+}
+
+.attribute h3{
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vh;
+  max-width: 375px;
+}
+
+.attribute--description {
+  margin-right: auto;
+}
+
+.attribute--basicValue, .attribute--bonusValue {
+  margin: 0 auto;
+}
+
+.attribute--total {
+  margin-left: 8px;
+  color: #32cd32;
+  font-size: 28px;
+}
+
+.attribute h3 a {
+  width: 48px;
+  height: 48px;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+  background: #DB4166;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.attribute--icon {
+  width: 24px;
+  height: 24px;
+  fill: #e0e7e7;
+  border-radius: 8px;
+}
+
+.attribute a:hover {
+  background: #e08fa2;
+}
+
+h3 input {
+  all: unset;
+  background: #e0e7e7;
+  padding: 6px 3px;
+  border-radius: 4px;
+  max-width: 60px;
+  text-align: center;
+  border: 3px solid #DB4166;
+  color: #DB4166
+}
