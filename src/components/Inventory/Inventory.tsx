@@ -1,12 +1,12 @@
 import './Inventory.css'
 
-enum ItemType {
+export enum ItemType {
   UTILITY = 'Utilidade',
   EQUIPMENT = 'Equipamento',
   OTHERS = 'Outros'
 }
 
-enum EquipmentPosition {
+export enum EquipmentPosition {
   HELMET = 'Capacete',
   CHEST = 'Armadura',
   PANTS = 'Calça',
@@ -20,7 +20,7 @@ type EquipmentBonus = {
   bonusValue: number
 }
 
-type Item = {
+export type Item = {
   name: string
   description: string
   amount: number
@@ -49,68 +49,13 @@ type Equipments = {
 
 type Props = {
   equipments: Equipments
-  bag: Item[]
+  bag?: Item[]
 }
 
-const equipmentsTest = {
-  helmet: {
-    name: 'Chapéu do Andarilho',
-    description: 'Andarilho',
-    type: ItemType.EQUIPMENT,
-    amount: 1,
-    price: 0,
-    equipmentPosition: EquipmentPosition.HELMET,
-    equipmentBonus: {description: 'FOR', bonusValue: 7}
-  },
-  chest: {
-    name: 'Camisa do Andarilho',
-    description: 'Andarilho',
-    type: ItemType.EQUIPMENT,
-    amount: 1,
-    price: 0,
-    equipmentPosition: EquipmentPosition.CHEST,
-    equipmentBonus: {description: 'VIT', bonusValue: 10}
-  },
-  pants: {
-    name: 'Calça do Andarilho',
-    description: 'Andarilho',
-    type: ItemType.EQUIPMENT,
-    amount: 1,
-    price: 0,
-    equipmentPosition: EquipmentPosition.PANTS,
-    equipmentBonus: {description: 'VIT', bonusValue: 10}
-  },
-  gloves: {
-    name: 'Luvas do Andarilho',
-    description: 'Andarilho',
-    type: ItemType.EQUIPMENT,
-    amount: 1,
-    price: 0,
-    equipmentPosition: EquipmentPosition.GLOVES,
-    equipmentBonus: {description: 'FOR', bonusValue: 5}
-  },
-  boots: {
-    name: 'Botas do Andarilho',
-    description: 'Andarilho',
-    type: ItemType.EQUIPMENT,
-    amount: 1,
-    price: 0,
-    equipmentPosition: EquipmentPosition.BOOTS,
-    equipmentBonus: {description: 'DES', bonusValue: 5}
-  },
-  weapon: {
-    name: 'Arco do Andarilho',
-    description: 'Andarilho',
-    type: ItemType.EQUIPMENT,
-    amount: 1,
-    price: 0,
-    equipmentPosition: EquipmentPosition.WEAPON,
-    equipmentBonus: {description: 'FOR', bonusValue: 25}
-  }
-}
+
 
 const Inventory = ({
-  equipments = equipmentsTest,
+  equipments,
   bag
 }: Props) => {
   return (

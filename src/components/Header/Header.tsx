@@ -30,7 +30,7 @@ type Props = {
 }
 
 const Header = ({
-  character= stats
+  character = stats
 }: Props) => {
   return (
     <header>
