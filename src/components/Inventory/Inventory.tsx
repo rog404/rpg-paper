@@ -7,7 +7,7 @@ enum ItemType {
 }
 
 enum EquipmentPosition {
-  HEAD = 'Cabeça',
+  HELMET = 'Capacete',
   CHEST = 'Armadura',
   PANTS = 'Calça',
   GLOVES = 'Luvas',
@@ -39,7 +39,7 @@ const itemDefault: Item = {
 }
 
 type Equipments = {
-  head: Item
+  helmet: Item
   chest: Item
   pants: Item
   gloves: Item
@@ -53,13 +53,13 @@ type Props = {
 }
 
 const equipmentsTest = {
-  head: {
+  helmet: {
     name: 'Chapéu do Andarilho',
     description: 'Andarilho',
     type: ItemType.EQUIPMENT,
     amount: 1,
     price: 0,
-    equipmentPosition: EquipmentPosition.HEAD,
+    equipmentPosition: EquipmentPosition.HELMET,
     equipmentBonus: {description: 'FOR', bonusValue: 7}
   },
   chest: {
@@ -116,32 +116,38 @@ const Inventory = ({
   return (
     <div className="inventory">
       <div className="inventory--equipment">
-        <div className="inventory--equipmentBox">
-          <span>{equipments.head.name}</span>
-          <span>{equipments.head.equipmentBonus?.description} + {equipments.head.equipmentBonus?.bonusValue}</span>
+        <div className="inventory--equipmentBox inventory--equipmentHelmet">
+          <span>{equipments.helmet.name}</span>
+          <span>{equipments.helmet.equipmentBonus?.description} + {equipments.helmet.equipmentBonus?.bonusValue}</span>
         </div>
-        <div className="inventory--equipmentBox">
+        <div className="inventory--equipmentBox inventory--equipmentChest">
           <span>{equipments.chest.name}</span>
           <span>{equipments.chest.equipmentBonus?.description} + {equipments.chest.equipmentBonus?.bonusValue}</span>
         </div>
-        <div className="inventory--equipmentBox">
+        <div className="inventory--equipmentBox inventory--equipmentPants">
           <span>{equipments.pants.name}</span>
           <span>{equipments.pants.equipmentBonus?.description} + {equipments.pants.equipmentBonus?.bonusValue}</span>
         </div>
-        <div className="inventory--equipmentBox">
+        <div className="inventory--equipmentBox inventory--equipmentBoots">
           <span>{equipments.boots.name}</span>
           <span>{equipments.boots.equipmentBonus?.description} + {equipments.boots.equipmentBonus?.bonusValue}</span>
         </div>
-        <div className="inventory--equipmentBox">
+        <div className="inventory--equipmentBox inventory--equipmentGloves">
           <span>{equipments.gloves.name}</span>
           <span>{equipments.gloves.equipmentBonus?.description} + {equipments.gloves.equipmentBonus?.bonusValue}</span>
         </div>
-        <div className="inventory--equipmentBox">
+        <div className="inventory--equipmentBox inventory--equipmentShield">
           <span>{equipments.weapon.name}</span>
           <span>{equipments.weapon.equipmentBonus?.description} + {equipments.weapon.equipmentBonus?.bonusValue}</span>
         </div>
       </div>
-      <div className="inventory--bag">Bag</div>
+      <div className="inventory--bag">
+        <div className="inventory--bagItem"></div>
+        <div className="inventory--bagItem"></div>
+        <div className="inventory--bagItem"></div>
+        <div className="inventory--bagItem"></div>
+        <div className="inventory--bagItem"></div>
+      </div>
     </div>
   )
 }

@@ -62,7 +62,7 @@ const Main = ({
           <AttributeRow key={key} data={attribute}/>
         )}
       </table>
-      {/* <Inventory /> */}
+      <Inventory />
     </main>
   )
 }

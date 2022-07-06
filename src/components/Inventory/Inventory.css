@@ -1,5 +1,4 @@
 .inventory {
-  height: 300px;
   width: 375px;
   padding: 2px;
 }
@@ -8,14 +7,13 @@
   display: grid;
   gap: 3px;
   grid-template-columns: auto auto auto;
-  padding: 0 20px;
 }
 
 .inventory--equipmentBox {
-  background: #e0e7e7;
-  width: 110px;
-  height: 110px;
-  border-radius: 4px;
+  filter: grayscale(75%);
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
   transform: scale(0.95);
   display: flex;
   flex-direction: column;
@@ -23,11 +21,42 @@
   align-items: center;
   text-align: center;
   color: black;
+  border: 3px solid #e0e7e7;
+}
 
+.inventory--equipmentHelmet {
+  background: url(../../assets/helmet.png);
+  background-size: contain;
+}
+.inventory--equipmentChest {
+  background: url(../../assets/chest.png);
+  background-size: contain;
+}
+.inventory--equipmentGloves {
+  background: url(../../assets/gloves.png);
+  background-size: contain;
+}
+.inventory--equipmentBoots {
+  background: url(../../assets/boots.png);
+  background-size: contain;
+}
+.inventory--equipmentShield {
+  background: url(../../assets/shield.png);
+  background-size: contain;
+}
+.inventory--equipmentPants {
+  background: url(../../assets/pants.png);
+  background-size: contain;
+}
+
+.inventory--equipmentDisabled {
+  filter: grayscale(100%);
 }
 
 .inventory--equipmentBox span {
-  color: black
+  background: #000000CC;
+  padding: 2px 4px;
+  border-radius: 4px;
 }
 
 .inventory--equipmentBox span:last-child {
@@ -36,6 +65,22 @@
 }
 
 .inventory--equipmentBox:hover {
-  background: #ffffff;
+  filter: grayscale(0%);
   transform: scale(1);
+}
+
+.inventory--bag {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.inventory--bagItem {
+  height: 60px;
+  width: 60px;
+  border-radius: 4px;
+  background: #e0e7e745;
+  border: 2px solid #DB4166;
 }

@@ -60,3 +60,39 @@ h3 input {
   border: 3px solid #DB4166;
   color: #DB4166
 }
+
+@media only screen and (max-width: 375px) {
+  .attribute {
+    margin-bottom: 4px;
+  }
+  
+  .attribute h3 {
+    font-size: 14px;
+    max-width: 330px;
+  }
+  
+  .attribute--total {
+    margin-left: 8px;
+    color: #32cd32;
+    font-size: 22px;
+  }
+  
+  .attribute h3 a {
+    width: 42px;
+    height: 42px;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    background: #DB4166;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .attribute--icon {
+    width: 24px;
+    height: 24px;
+    fill: #e0e7e7;
+    border-radius: 8px;
+  }
+}

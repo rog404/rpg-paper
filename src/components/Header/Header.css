@@ -144,3 +144,32 @@ svg {
   font-size: 20px;
   top: 2px
 }
+
+@media only screen and (max-width: 375px) {
+  .header--hp {
+    border-radius: 30px;
+    height: 20px;
+  }
+  
+  .header--mp {
+    border-radius: 30px;
+    height: 10px;
+  }
+
+  .header--icon {
+    height: 18px;
+  }
+
+  .header--goldBar {
+    font-size: 14px;
+  }
+
+  .header--barLabel {
+    font-size: 12px;
+  }
+
+  .header--bigBar {
+    top: 1;
+    font-size: 16px;
+  }
+}

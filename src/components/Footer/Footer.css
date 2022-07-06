@@ -1,6 +1,45 @@
 footer {
-  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #e0e7e736;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.7px);
+  -webkit-backdrop-filter: blur(4.7px);
+  height: 48px;
+  width: 375px;
+  margin-bottom: 10px;
+}
+
+.footer--item {
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+}
+
+.footer--icon {
+  width: 32px;
+  height: 32px;
+  transform: scale(0.9);
+}
+
+.footer--icon:hover {
+  fill: #DB4166;
+  transform: scale(1);
+}
+
+.footer--addTurno {
+
+}
+
+.footer--labelTurno {
+
+}
+
+.footer--More {
+
 }
