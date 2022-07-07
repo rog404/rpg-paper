@@ -6,6 +6,8 @@
 .inventory--equipment {
   display: grid;
   gap: 3px;
+  justify-items: center;
+  align-items: center;
   grid-template-columns: auto auto auto;
 }
 

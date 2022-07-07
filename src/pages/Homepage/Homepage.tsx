@@ -3,7 +3,7 @@ import './Homepage.css'
 import Footer from "../../components/Footer/Footer"
 import Header from "../../components/Header/Header"
 import Main from "../../components/Main/Main"
-import { Attribute } from '../../components/AttributeRow/AttributeRow'
+import { Attribute } from '../../types/RpgTypes'
 
 const rogerio = {
   name: 'Rogerio Bordignon',

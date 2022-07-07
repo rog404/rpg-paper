@@ -6,19 +6,10 @@
 
 .attribute h3{
   font-size: 18px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
-  width: 100vh;
   max-width: 375px;
-}
-
-.attribute--description {
-  margin-right: auto;
-}
-
-.attribute--basicValue, .attribute--bonusValue {
-  margin: 0 auto;
 }
 
 .attribute--total {
@@ -27,9 +18,14 @@
   font-size: 28px;
 }
 
+.attribute--basicValue, .attribute--bonusValue, .attribute--total {
+  text-align: center;
+}
+
 .attribute h3 a {
-  width: 48px;
-  height: 48px;
+  margin: auto;
+  width: 42px;
+  height: 42px;
   text-decoration: none;
   border-radius: 8px;
   text-align: center;
@@ -40,8 +36,8 @@
 }
 
 .attribute--icon {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   fill: #e0e7e7;
   border-radius: 8px;
 }
@@ -55,7 +51,7 @@ h3 input {
   background: #e0e7e7;
   padding: 6px 3px;
   border-radius: 4px;
-  max-width: 60px;
+  max-width: 50px;
   text-align: center;
   border: 3px solid #DB4166;
   color: #DB4166
@@ -72,27 +68,16 @@ h3 input {
   }
   
   .attribute--total {
-    margin-left: 8px;
-    color: #32cd32;
     font-size: 22px;
   }
   
   .attribute h3 a {
-    width: 42px;
-    height: 42px;
-    text-decoration: none;
-    border-radius: 8px;
-    text-align: center;
-    background: #DB4166;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 40px;
+    height: 40px;
   }
   
   .attribute--icon {
-    width: 24px;
-    height: 24px;
-    fill: #e0e7e7;
-    border-radius: 8px;
+    width: 20px;
+    height: 20px;
   }
 }
