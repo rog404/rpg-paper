@@ -1,5 +1,7 @@
 import './Header.css'
 import { FaPiggyBank } from "react-icons/fa";
+import Modal from '../Modal/Modal';
+import { useEffect, useState } from 'react';
 
 type Stats = {
   name: string
@@ -32,33 +34,56 @@ type Props = {
 const Header = ({
   character = stats
 }: Props) => {
+  const [modalOpen, setModalOpen] = useState(false)
+  
+  useEffect(() => {
+    function handleEscapeKey(event: KeyboardEvent) {
+      if (event.code === 'Escape') {
+        setModalOpen(false)
+      }
+    }
+  
+    document.addEventListener('keydown', handleEscapeKey)
+    return () => document.removeEventListener('keydown', handleEscapeKey)
+  }, [])
+
+
   return (
-    <header>
-      <div className="header--exp">
-        <svg>
-        <circle className="header--bg" cx="57" cy="57" r="52" />
-        <circle className="header--meter" cx="57" cy="57" r="52" />
-        </svg>
-      </div>
-      <div className="header--level">
-        <span>{character.level}</span>
-      </div>
-      <div className="header--stats">
-        <div className="header--userName">
-          <span>{character.name}</span>
-          <span className='header--userClass'> {character.class}</span>
+    <>
+      <header>
+        <div className="header--exp">
+          <svg>
+          <circle className="header--bg" cx="57" cy="57" r="52" />
+          <circle className="header--meter" cx="57" cy="57" r="52" />
+          </svg>
         </div>
-        <div className="header--bar">
-          <div className="header--hp"/>
-          <span className='header--barLabel header--bigBar'>{character.hp} / {character.hpMax}</span>
+        <div className="header--level">
+          <span>{character.level}</span>
         </div>
-        <div className="header--bar header--lastBar">
-          <div className="header--mp" />
-          <span className='header--barLabel'>{character.mp} / {character.mpMax}</span>
+        <div className="header--stats">
+          <div className="header--userName">
+            <span>{character.name}</span>
+            <span className='header--userClass'> {character.class}</span>
+          </div>
+          <div className="header--bar">
+            <div className="header--hp"/>
+            <span className='header--barLabel header--bigBar'>{character.hp} / {character.hpMax}</span>
+          </div>
+          <div className="header--bar header--lastBar">
+            <div className="header--mp" />
+            <span className='header--barLabel'>{character.mp} / {character.mpMax}</span>
+          </div>
+          <div className="header--goldBar"><FaPiggyBank onClick={() => setModalOpen(true)} className='header--icon'/>{character.gold}</div>
         </div>
-        <div className="header--goldBar"><FaPiggyBank className='header--icon'/>{character.gold}</div>
-      </div>
-    </header>
+      </header>
+      <Modal 
+        isOpen={modalOpen}
+        title='HP'
+        onClose={() => setModalOpen(false)}
+      >
+        Oi tudo bem?
+      </Modal>
+    </>
   )
 }
 
