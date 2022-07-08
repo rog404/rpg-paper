@@ -10,6 +10,8 @@
 }
 
 .modal {
+  display: absolute;
+  z-index: 10000;
   width: 375px;
   padding: 16px 0;
   background: #e0e7e736;
@@ -26,6 +28,7 @@
 .modal--header {
   font-size: red;
   margin-bottom: 4px;
+  border: none
 }
 
 .modal--icon {

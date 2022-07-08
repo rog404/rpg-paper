@@ -1,0 +1,22 @@
+.inventory {
+  width: 375px;
+  padding: 2px;
+}
+
+
+
+.inventory--bag {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.inventory--bagItem {
+  height: 60px;
+  width: 60px;
+  border-radius: 4px;
+  background: #e0e7e745;
+  border: 2px solid #DB4166;
+}

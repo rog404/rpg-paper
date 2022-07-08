@@ -1,93 +1,45 @@
-import { Attribute, ItemType, EquipmentPosition } from '../../types/RpgTypes'
-import AttributeRow from '../AttributeRow/AttributeRow'
-import Inventory from '../Inventory/Inventory'
-import './Main.css'
+import { Attribute, Character } from '../../types/RpgTypes';
+import AttributeRow from '../AttributeRow/AttributeRow';
+import Inventory from '../InventoryCard/InventoryCard';
+import './Main.css';
 
 type Props = {
-  attributes: Attribute[]
+  character: Character
+  onCharacterInfoChange: (characterNewInfo: Character) => void;
 }
 
+function Main({
+  character,
+  onCharacterInfoChange,
+}: Props) {
+  const handleAttributesChange = (attribute: Attribute) => {
+    const attrPosition = character.attributes.findIndex(obj => obj.description === attribute.description)
+    if (attrPosition !== -1) character.attributes[attrPosition] = attribute
 
-const equipmentsTest = {
-  helmet: {
-    name: 'Chapéu do Andarilho',
-    description: 'Andarilho',
-    type: ItemType.EQUIPMENT,
-    amount: 1,
-    price: 0,
-    equipmentPosition: EquipmentPosition.HELMET,
-    equipmentBonus: {description: 'FOR', bonusValue: 7}
-  },
-  chest: {
-    name: 'Camisa do Andarilho',
-    description: 'Andarilho',
-    type: ItemType.EQUIPMENT,
-    amount: 1,
-    price: 0,
-    equipmentPosition: EquipmentPosition.CHEST,
-    equipmentBonus: {description: 'VIT', bonusValue: 10}
-  },
-  pants: {
-    name: 'Calça do Andarilho',
-    description: 'Andarilho',
-    type: ItemType.EQUIPMENT,
-    amount: 1,
-    price: 0,
-    equipmentPosition: EquipmentPosition.PANTS,
-    equipmentBonus: {description: 'VIT', bonusValue: 10}
-  },
-  gloves: {
-    name: 'Luvas do Andarilho',
-    description: 'Andarilho',
-    type: ItemType.EQUIPMENT,
-    amount: 1,
-    price: 0,
-    equipmentPosition: EquipmentPosition.GLOVES,
-    equipmentBonus: {description: 'FOR', bonusValue: 5}
-  },
-  boots: {
-    name: 'Botas do Andarilho',
-    description: 'Andarilho',
-    type: ItemType.EQUIPMENT,
-    amount: 1,
-    price: 0,
-    equipmentPosition: EquipmentPosition.BOOTS,
-    equipmentBonus: {description: 'DES', bonusValue: 5}
-  },
-  weapon: {
-    name: 'Arco do Andarilho',
-    description: 'Andarilho',
-    type: ItemType.EQUIPMENT,
-    amount: 1,
-    price: 0,
-    equipmentPosition: EquipmentPosition.WEAPON,
-    equipmentBonus: {description: 'FOR', bonusValue: 25}
-  }
-}
+    const newCharacter: Character = {
+      name: character.name,
+      class: character.class,
+      level: character.level,
+      exp: character.exp,
+      hp: character.hp,
+      hpMax: character.hpMax,
+      mp: character.mp,
+      mpMax: character.mpMax,
+      gold: character.gold,
+      attributes: character.attributes,
+      mainInventory: character.mainInventory,
+    };
+    onCharacterInfoChange(newCharacter);
+  };
 
-const bag = [
-  {
-    name: 'Nome',
-    description: 'Descrição',
-    amount: 1,
-    price: 24,
-    type: ItemType.OTHERS
-  }
-]
-
-const Main = ({
-  attributes
-}: Props) => {
   return (
     <main>
       <div className="main--attributes">
-        {attributes.map((attribute, key) => 
-          <AttributeRow key={key} data={attribute}/>
-        )}
+        {character.attributes.map((attribute, key) => <AttributeRow key={key} data={attribute} onChangeAttribute={handleAttributesChange} />)}
       </div>
-      <Inventory equipments={equipmentsTest} bag={bag}/>
+      <Inventory mainInventory={character.mainInventory} />
     </main>
-  )
+  );
 }
 
-export default Main
+export default Main;

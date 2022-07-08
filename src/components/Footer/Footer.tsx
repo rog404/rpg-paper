@@ -1,20 +1,20 @@
-import './Footer.css'
-import { FaPlus, FaCogs, FaDiceD20 } from "react-icons/fa";
+import './Footer.css';
+import { FaPlus, FaCogs, FaDiceD20 } from 'react-icons/fa';
 
-const Footer = () => {
+function Footer() {
   return (
     <footer>
       <div className="footer--item footer--addTurno">
-        <FaPlus className='footer--icon'/>
+        <FaPlus className="footer--icon" />
       </div>
       <div className="footer--item footer--labelTurno">
-        <FaDiceD20 className='footer--icon' />
+        <FaDiceD20 className="footer--icon" />
       </div>
       <div className="footer--item footer--More">
-        <FaCogs className='footer--icon'/>
+        <FaCogs className="footer--icon" />
       </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
